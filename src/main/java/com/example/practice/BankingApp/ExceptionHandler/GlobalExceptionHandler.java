@@ -22,4 +22,13 @@ public class GlobalExceptionHandler {
         error.put("Status : ", HttpStatus.NOT_FOUND.value());
         return new ResponseEntity<>(error,HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(InsufficientBalanceException.class)
+    public ResponseEntity<Object>handlerForInsufficentBalance(InsufficientBalanceException ex){
+        Map<String,Object> error = new HashMap<>();
+        error.put("TimeStamp : ", LocalDate.now());
+        error.put("Message : ",ex.getMessage());
+        error.put("Status : ", HttpStatus.BAD_REQUEST.value());
+        return new ResponseEntity<>(error,HttpStatus.BAD_REQUEST);
+    }
 }
