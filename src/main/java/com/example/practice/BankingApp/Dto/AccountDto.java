@@ -4,11 +4,13 @@ package com.example.practice.BankingApp.Dto;
 import lombok.*;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class AccountDto {
 
     private Long id;
+
+    public AccountDto() {
+    }
+
     private String accountHolderName;
     private double balance;
 
