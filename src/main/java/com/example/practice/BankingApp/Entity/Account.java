@@ -7,6 +7,7 @@ import lombok.*;
 @Entity
 @Table(name="accounts")
 @Data
+@Builder
 public class Account {
 
     @Id
